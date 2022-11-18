@@ -1,5 +1,8 @@
 import { DateTime } from 'luxon'
-import { BaseModel, column } from '@ioc:Adonis/Lucid/Orm'
+import { BaseModel, BelongsTo, belongsTo, column, hasOne, HasOne } from '@ioc:Adonis/Lucid/Orm'
+import Aluguel from './Aluguel'
+import Genero from './Genero'
+import Autor from './Autor'
 
 export default class Livro extends BaseModel {
   @column({ isPrimary: true })
@@ -22,4 +25,13 @@ export default class Livro extends BaseModel {
 
   @column.dateTime({ autoCreate: true, autoUpdate: true })
   public updatedAt: DateTime
+
+  @belongsTo(() => Aluguel)
+  public aluguel: BelongsTo<typeof Aluguel>
+
+  @hasOne(() => Genero)
+  public genero: HasOne<typeof Genero>
+
+  @hasOne(() => Autor)
+  public autor: HasOne<typeof Autor>
 }
