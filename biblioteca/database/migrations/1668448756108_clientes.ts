@@ -9,7 +9,6 @@ export default class extends BaseSchema {
       table.string('nome', 300).notNullable()
       table.string('cpf', 11).unique()
       table.date('dt_nascimento').notNullable()
-      table.boolean('se_livro_alugado').notNullable()
       table.boolean('se_ativo').notNullable()
       table.string('endereco', 300).notNullable()
       table.string('telefone', 15).notNullable()

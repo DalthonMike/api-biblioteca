@@ -1,5 +1,6 @@
-import { DateTime } from 'luxon'
-import { BaseModel, column } from '@ioc:Adonis/Lucid/Orm'
+import {DateTime} from 'luxon'
+import {BaseModel, column, HasMany, hasMany} from '@ioc:Adonis/Lucid/Orm'
+import Cargo from "App/Models/Cargo";
 
 export default class Funcionario extends BaseModel {
   @column({ isPrimary: true })
@@ -15,7 +16,10 @@ export default class Funcionario extends BaseModel {
   public dt_nascimento: Date
 
   @column()
-  public cargo_id: number
+  public cargoId: number
+
+  @hasMany(() => Cargo)
+  public cargo: HasMany<typeof Cargo>;
 
   @column()
   public se_ativo: boolean

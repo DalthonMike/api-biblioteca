@@ -15,9 +15,6 @@ export default class Cliente extends BaseModel {
   public dt_nascimento: Date
 
   @column()
-  public se_livro_alugado: boolean
-
-  @column()
   public se_ativo: boolean
 
   @column()

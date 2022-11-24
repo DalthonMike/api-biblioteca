@@ -6,9 +6,6 @@ export default class Estoque extends BaseModel {
   public id: number
 
   @column()
-  public livro_id: number
-
-  @column()
   public quantidade: number
 
   @column.dateTime({ autoCreate: true })

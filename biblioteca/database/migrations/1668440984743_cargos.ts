@@ -8,7 +8,7 @@ export default class extends BaseSchema {
       table.increments('id')
       table.string('cargo', 100).notNullable()
       table.boolean('se_ativo').notNullable()
-
+      table.integer('funcionario_id').references('id').inTable('funcionarios')
       /**
        * Uses timestamptz for PostgreSQL and DATETIME2 for MSSQL
        */
